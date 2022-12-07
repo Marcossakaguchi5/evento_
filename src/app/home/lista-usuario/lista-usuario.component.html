@@ -1,0 +1,62 @@
+  <!-- NavBar com logo e Título-->
+  <div id="navbar">
+    <div id="logo">
+      <img src="../../../assets/images/logo.png">
+    </div> 
+    <div id="navbar-adm">
+       <a routerLink='/empresas'   ><img src="../../../assets/icon/briefcase.svg"> 
+       <p routerLink='/empresas' >Empresas</p></a>    
+      <a routerLink='/eventos' ><img src="../../../assets/icon/home.svg">
+      <p routerLink='/eventos' > Home</p></a>      
+      <a routerLink='/convidados'><img src="../../../assets/icon/user.svg">
+      <p routerLink='/convidados'>Convidados</p></a>
+      <a routerLink='/home/listausuario'><img src="../../../assets/icon/settings.svg">
+      <p routerLink='/home/listausuario'>Usuários</p></a>
+      <a routerLink='/' ><img src="../../../assets/icon/log-out.svg">
+      <p routerLink='/' >Sair</p></a>
+    </div>
+
+  </div>
+
+<div id="conteudo">
+  <h1>Área Administradores</h1>
+  <button (click)="add()" class="btn btn-primary"><img src="../../../assets/icon/plus-circle.svg">Usuário</button>
+</div>
+
+
+  <table *ngIf="listaUsuario.length>0 , else semUsuario">
+    <thead>
+      <tr>
+        <th>Usuários</th>
+        <th>Tipo</th>
+        <th>E-mail</th>
+        <th>Telefone</th>
+        <th>Editar</th>
+        <th>Excluir</th>
+
+      </tr>
+    </thead>
+    <tbody >
+    <tr *ngFor="let usuario of listaUsuario">
+      <td>{{usuario.id_login}}  -  {{usuario.login}}</td>
+      <td>{{usuario.perfil}}</td>
+      <td>{{usuario.email}}</td>
+      <td>{{usuario.telefone}}</td>
+      <td><img (click)="edit(usuario.id_login,usuario.login,usuario.perfil,usuario.email,usuario.telefone)" src="../../../assets/icon/icon _edit 2_.svg"></td>
+      <td><img (click)="delet(usuario.id_login)"  src="../../../assets/icon/icon _trash 2_.svg"></td>
+    </tr>
+  </tbody>
+
+    <div >
+
+ 
+    </div>
+  </table>
+
+
+
+
+
+<ng-template #semUsuario>
+  <p>Nenhum usuário cadastrado</p>
+</ng-template>

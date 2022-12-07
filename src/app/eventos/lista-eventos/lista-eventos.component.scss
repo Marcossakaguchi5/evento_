@@ -1,0 +1,46 @@
+.row {
+    width: 1500px;
+    margin: 0 auto;
+    min-width: 1300px;
+    margin-top: 40px;
+}
+
+.card {
+    border-radius: 5px;
+    box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+    padding: 8px;
+    margin: 15px;
+    width: 320px;
+    height: 172px;
+    transition: all 0.3s ease-out;
+    float: left;
+
+}
+  
+.card:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.titulo-card{
+    font-weight: bolder;
+}
+
+.img-convidado, .qnt-convidado{
+    float: left;
+}
+
+.img-confirmado, .qnt-confirmado{
+    float: right;
+}
+
+.img-convidado, .img-confirmado{
+    position: relative;
+    top: 12px;
+    padding-right: 15px;
+}
+
+.posicao-img{
+    margin-top: 10px;
+}
+
