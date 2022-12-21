@@ -1,7 +1,7 @@
+import { EditarEventoComponent } from './editar-evento/editar-evento.component';
 import { ComponentsModule } from './../components/components.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { EditarEventoComponent } from './../components/evento/editar-evento/editar-evento.component';
 import { CadastrarEventoComponent } from './../components/evento/cadastrar-evento/cadastrar-evento.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,7 +15,8 @@ import { NovoEventoComponent } from './novo-evento/novo-evento.component';
   declarations: [
     ListaEventosComponent,
     CadastrarEventoComponent,
-    EditarEventoComponent,  
+EditarEventoComponent,
+
     NovoEventoComponent
   ],
   imports: [

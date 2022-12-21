@@ -1,38 +1,4 @@
-<!-- 
-        <div id="container1">
-            <div>
-                <img src="../../../../assets/images/logo.png">
-            </div>
-            <div>
-                <h1 class="login">Login</h1></div>
-            <div class="clear"></div>
 
-            <form (ngSubmit)="login()" #loginForm="ngForm">
-
-                <div class="cor">
-                    <label>Usuario</label>
-                    <input [(ngModel)]="loginn" name="login" #campoUsuario="ngModel" required class="email" type="text" >
-                    <app-mensagem *ngIf="campoUsuario.invalid && campoUsuario.touched" mensagem="Usurio obrigatorio"></app-mensagem>
-                </div>
-
-                <div class="cor">
-                    <label class="">Senha</label>
-                    <input [(ngModel)]="senha" name ="senha" #campoSenha="ngModel" required class="senha" type="password" >
-                    <app-mensagem *ngIf="campoSenha.invalid && campoSenha.touched" mensagem="Senha obrigatorio"></app-mensagem>
-                </div>
-
-                <div class="esqueceu">
-                    <a href="#">Esqueceu a senha ?</a>
-                </div>
-
-                <div>
-                    <button class="submit" [disabled]="loginForm.invalid">Entrar</button>
-                </div>
-
-            </form>
-
-
-        </div> -->
 <div class="login">
     <div class="logo">
         <img src="../../../assets/images/logo.png">
@@ -51,6 +17,3 @@
         <button  class="btn btn-primary"> Entrar </button>
     </form>
 </div>
-
-<!-- <div class="containerform">
-</div> -->

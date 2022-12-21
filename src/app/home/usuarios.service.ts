@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { environment } from './../../environments/environment';
+import { environment } from '../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Usuario } from './usuario';
 
@@ -10,7 +10,7 @@ const API= environment.apiURL;
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService {
+export class UsuariosService {
   private  readonly API = `${API}/usuario`
 
   constructor(private http:HttpClient) { }

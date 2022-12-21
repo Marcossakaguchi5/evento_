@@ -20,12 +20,12 @@ export class PessoaService {
   cadastrarNovaPessoa(novaPessoa:Pessoa){
     return this.http.post(`${API}/convidados`,novaPessoa);
   }
-  edit(id_convidado:any,editaPessoa:any):Observable<any>{
-    console.log(id_convidado)
-    return this.http.put<any>(`${API}/convidados/${id_convidado}`,editaPessoa);
+  edit(nome:any,editaPessoa:any):Observable<any>{
+    console.log(nome)
+    return this.http.put<any>(`${API}/convidados/${nome}`,editaPessoa);
   }
 
-  delet(id_convidado:any){
-    return this.http.delete(`${API}/convidados/${id_convidado}`)
+  delet(nome:any){
+    return this.http.delete(`${API}/convidados/${nome}`)
   }
 }

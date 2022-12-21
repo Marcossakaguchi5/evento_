@@ -21,11 +21,11 @@ export class EmpresaService {
     return this.http.post(`${API}/empresa`, novaEmpresa);
   }
 
-  edit(id_empresa: any, editaEmpresa: any): Observable<any> {
-    return this.http.put<any>(`${API}/empresa/${id_empresa}`, editaEmpresa);
+  edit(empresa: any, editaEmpresa: any): Observable<any> {
+    return this.http.put<any>(`${API}/empresa/${empresa}`, editaEmpresa);
   }
 
-  delet(id_empresa: any) {
-    return this.http.delete(`${API}/empresa/${id_empresa}`);
+  delet(empresa: any) {
+    return this.http.delete(`${API}/empresa/${empresa}`);
   }
 }

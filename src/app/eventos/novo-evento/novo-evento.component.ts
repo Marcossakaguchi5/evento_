@@ -4,7 +4,7 @@ import { CadastrarEventoComponent } from './../../components/evento/cadastrar-ev
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { Evento } from '../evento';
 
 
@@ -14,7 +14,7 @@ import { Evento } from '../evento';
   styleUrls: ['./novo-evento.component.scss']
 })
 export class NovoEventoComponent implements OnInit {
-
+@Input() id_evento:any
   novoEventoForm!:FormGroup;
 
   constructor(
@@ -33,7 +33,7 @@ export class NovoEventoComponent implements OnInit {
   cadastrar(){
     if(this.novoEventoForm.valid){
       const novoEvento= this.novoEventoForm.getRawValue() as Evento;
-      this.EventoService.cadastrarNovoEvento(novoEvento).subscribe(
+      this.EventoService.cadastrarNovoEvento(this.id_evento,novoEvento).subscribe(
         ()=>{this.router.navigate(['/eventos']);
       },
       (error:any)=>{

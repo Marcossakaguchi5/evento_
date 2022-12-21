@@ -1,5 +1,6 @@
 import { EditarUsuarioComponent } from './../editar-usuario/editar-usuario.component';
-import { UsuarioService } from "./../usuario.service";
+import { UsuariosService } from "../usuarios.service";
+import { UsuarioService } from 'src/app/autenticacao/usuario/usuario.service';
 
 import { Router } from "@angular/router";
 import { NovoUsuarioComponent } from "./../novo-usuario/novo-usuario.component";
@@ -18,9 +19,10 @@ export class ListaUsuarioComponent implements OnInit {
   listaUsuario: Usuario[] = [];
 
   constructor(
-    private service: UsuarioService,
+    private service: UsuariosService,
     private modalController: ModalController,
-    private router: Router
+    private router: Router,
+    private ser:UsuarioService
   ) {}
 
   ngOnInit(): void {
@@ -75,6 +77,9 @@ export class ListaUsuarioComponent implements OnInit {
       },
       (error) => console.log(error)
     );
+  }
+  logout(){
+this.ser.logout()
   }
 
 

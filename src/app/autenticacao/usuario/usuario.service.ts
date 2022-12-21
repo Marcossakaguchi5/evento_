@@ -24,7 +24,9 @@ export class UsuarioService {
   retornaUsuario() {
     return this.usuarioSubject.asObservable();
   }
+
   salvaToken(token: string) {
+    console.log(token)
     this.tokenService.salvaToken(token);
     this.decodificaJWT();
   }

@@ -1,4 +1,4 @@
-import { UsuarioService } from './../usuario.service';
+import { UsuariosService } from './../usuarios.service';
 import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
@@ -17,7 +17,7 @@ export class NovoUsuarioComponent implements OnInit {
   novoUsuarioForm!:FormGroup;
   constructor(
     private formBuilder:FormBuilder,
-    private NovoUsuarioService:UsuarioService,
+    private NovoUsuarioService:UsuariosService,
     private router:Router,
     private modalController:ModalController
     ) { }

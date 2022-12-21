@@ -16,8 +16,9 @@ export class EditarEmpresaComponent implements OnInit {
 
   editarEmpresaForm!:FormGroup;
 
-@Input() id_empresa:any;
+
 @Input() empresa:any
+@Input() empresas:any
 
 output:any;
 
@@ -39,7 +40,7 @@ output:any;
   editar(){
     if(this.editarEmpresaForm.valid){
       const editaEmpresa = this.editarEmpresaForm.getRawValue() as Empresa;
-      this.service.edit(this.id_empresa,editaEmpresa).subscribe(()=>{this.router.navigate(['empresas'])})
+      this.service.edit(this.empresa,editaEmpresa).subscribe(()=>{this.router.navigate(['empresas'])})
     }
   
   }

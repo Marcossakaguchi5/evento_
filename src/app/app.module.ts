@@ -1,3 +1,4 @@
+import { EmpresasModule } from './empresas/empresas.module';
 
 import { ComponentsModule } from './components/components.module';
 
@@ -28,6 +29,7 @@ import { RouteReuseStrategy } from '@angular/router';
     ComponentsModule,
     FormsModule,
     ReactiveFormsModule,
+    EmpresasModule
    
   
     

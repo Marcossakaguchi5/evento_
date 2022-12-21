@@ -14,6 +14,7 @@ export class TokenService {
 
   salvaToken(token:string){
     localStorage.setItem(KEY,token);
+    console.log(token)
 
   }
   excluirToken(){

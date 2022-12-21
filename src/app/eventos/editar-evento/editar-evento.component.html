@@ -1,23 +1,22 @@
 
-
 <div class="modal-modal">
     <div class="modal-top">
         <label class="modal-title">Editar evento</label>
-     <a>   <img (click)="cancelar()" src="../../../../assets/icon/check-box.svg"></a>
-    </div>
-    <form>
+     <a>   <img (click)="cancelar()" src="../../../../assets/icon/x.svg"></a>
+     </div>
+    <form  [formGroup]="editarEventoForm" (submit)="editar()"> 
         <div class="modal-label"><label>Nome do evento</label>
         </div>
-        <input class="modal-input" type="text" name="email" >
+        <input formControlName="descricao"  class="modal-input" type="text"  >
         
     
         <div class="modal-label"><label>Data</label> </div>
-        <input class="modal-input" type="date" name="senha" id="senha" > 
+        <input formControlName="data_hora" [value]="" class="modal-input" type="date"> 
     
         
     
     
-        <button class="modal-button" (click)="salvar()" class="btn btn-primary"> Salvar alteracoes </button>
-    </form>
+        <button class="modal-button" (click)="salvar()" class="btn btn-primary"> Cadastrar </button>
+     </form> 
     </div>
     

@@ -24,24 +24,25 @@
 
 </div> -->
 
-  <div id="navbar">
-    <div id="logo">
-      <img src="../../../assets/images/logo.png">
-    </div> 
-    <div id="navbar-adm">
-      <a routerLink='/empresas'   ><img src="../../../assets/icon/briefcase.svg"> 
-      <p routerLink='/empresas' >Empresas</p></a>    
-      <a routerLink='/eventos' ><img src="../../../assets/icon/home.svg">
-      <p routerLink='/eventos' > Home</p></a>      
-      <a routerLink='/convidados'><img src="../../../assets/icon/user.svg">
-      <p routerLink='/convidados'>Convidados</p></a>
-      <a routerLink='/home/listausuario'><img src="../../../assets/icon/settings.svg">
-      <p routerLink='/home/listausuario'>Usuários</p></a>
-      <a routerLink='/'><img src="../../../assets/icon/log-out.svg">
-      <p routerLink='/'>Sair</p></a>
-    </div>
-
+<div id="navbar">
+  <div id="logo">
+    <img src="../../../assets/images/logo.png">
+  </div> 
+  <div id="navbar-adm">
+    <a routerLink='/eventos' ><img src="../../../assets/icon/home.svg">
+      <p routerLink='/eventos' > Home</p></a>  
+     <a routerLink='/empresas'   ><img src="../../../assets/icon/briefcase.svg"> 
+     <p routerLink='/empresas' >Empresas</p></a>    
+     
+    <a routerLink='/convidados'><img src="../../../assets/icon/user.svg">
+    <p routerLink='/convidados'>Convidados</p></a>
+    <a routerLink='/home/listausuario'><img src="../../../assets/icon/settings.svg">
+    <p routerLink='/home/listausuario'>Usuário</p></a>
+    <a routerLink='/'  (click)="logout()"><img src="../../../assets/icon/log-out.svg">
+    <p routerLink='/' (click)="logout()" >Sair</p></a>
   </div>
+
+</div>
 
 <div id="conteudo">
   <h1>Eventos</h1>
@@ -60,14 +61,14 @@
     <br><br>
     <div class="posicao-img">
       <div class="qnt-confirmado">
-        <p class="titulo">115</p><br>
+        <p class="titulo">{{evento.confirmados}}</p><br>
         <p>Confirmado</p>
       </div>
       <img class="img-confirmado" src="../../../assets/icon/check-box.svg" alt="" />
 
       <img class="img-convidado" src="../../../assets/icon/invite-line.svg" alt="" />
       <div class="qnt-convidado">
-        <p class="titulo">150</p><br>
+        <p class="titulo">{{evento.total}}</p><br>
         <p>Convidado</p>
       </div>
     </div>

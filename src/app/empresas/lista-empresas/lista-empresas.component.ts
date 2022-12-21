@@ -7,6 +7,7 @@ import { Component, OnInit } from "@angular/core";
 import { Empresa } from "../empresa";
 
 import { ModalController } from "@ionic/angular";
+import { UsuarioService } from "src/app/autenticacao/usuario/usuario.service";
 
 @Component({
   selector: "app-lista-empresas",
@@ -19,7 +20,8 @@ export class ListaEmpresasComponent implements OnInit {
   constructor(
     private service: EmpresaService,
     private modalController: ModalController,
-    private router: Router
+    private router: Router,
+    private ser:UsuarioService
   ) {}
 
   ngOnInit(): void {
@@ -35,22 +37,25 @@ export class ListaEmpresasComponent implements OnInit {
     });
     await modal.present();
   }
-  async edit(id_empresa: any, empresa: any) {
-    console.log(id_empresa, empresa);
+  async edit(empresa: any, empresas: any) {
+    console.log(empresa, empresas);
     const modal = await this.modalController.create({
       component: EditarEmpresaComponent,
-      componentProps: { id_empresa, empresa },
+      componentProps: { empresa, empresas },
       cssClass: "modal",
     });
     await modal.present();
   }
 
-  delet(id_empresa: any) {
-    this.service.delet(id_empresa).subscribe(
+  delet(empresa: any) {
+    this.service.delet(empresa).subscribe(
       () => {
         this.router.navigate(["/empresas"]);
       },
       (error) => console.log(error)
     );
+  }
+  logout(){
+this.ser.logout()
   }
 }

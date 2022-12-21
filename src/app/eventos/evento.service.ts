@@ -18,8 +18,14 @@ export class EventoService {
     return this.http.get(this.API)
 
   }
+listarUm(id_evento:any):Observable<any>{
+  return this.http.get(`${API}/evento/${id_evento}`)
+}
+edit(id_evento:any,editarEvento:any){
+  return this.http.put<any>(`${API}/evento/${id_evento}`,editarEvento)
+}
 
-  cadastrarNovoEvento(novoEvento:Evento){
+  cadastrarNovoEvento(id_evento:any,novoEvento:Evento){
     return this.http.post(`${API}/evento/1`,novoEvento)
   }
 }

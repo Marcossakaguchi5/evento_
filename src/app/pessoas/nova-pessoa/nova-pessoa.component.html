@@ -7,20 +7,24 @@
     <form [formGroup]="novaPessoaForm" (submit)="cadastrar()">
         <div class="modal-label"><label>Nome</label>
         </div>
-        <input formControlName="nome" class="modal-input" type="text" name="email" >
+        <input formControlName="nome" class="modal-input" type="text"  >
         
         <div class="modal-label"><label>Cargo</label>
         </div>
-        <input formControlName="cargo" class="modal-input" type="text" name="email" >
-        <div class="modal-label"><label>Empresa</label>
+        <input formControlName="cargo" class="modal-input" type="text"  >
+        <div  class="modal-label"><label>Empresa</label>
         </div>
-        <input formControlName="id_empresa" class="modal-input" type="text" name="email" >
+        
+        <select formControlName="empresa" 
+         class="modal-input" type="text"  >
+         <option  *ngFor="let empresa of listaPessoa" >{{empresa.empresa}}</option>
+         </select>
         <div class="modal-label"><label>E-mail</label>
         </div>
-        <input formControlName="email" class="modal-input" type="text" name="email" >
+        <input formControlName="email" class="modal-input" type="text"  >
         <div class="modal-label"><label>Telefone</label>
         </div>
-        <input formControlName="telefone" class="modal-input" type="text" name="email" >
+        <input formControlName="telefone" class="modal-input" type="text"  >
         
     
         <button class="modal-button" (click)="adicionar()" class="btn btn-primary"> Cadastrar </button>

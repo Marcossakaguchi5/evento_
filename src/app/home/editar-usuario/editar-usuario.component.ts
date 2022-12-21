@@ -1,4 +1,4 @@
-import { UsuarioService } from "./../usuario.service";
+import { UsuariosService } from "../usuarios.service";
 import { Usuario } from "./../usuario";
 
 import { ModalController } from "@ionic/angular";
@@ -26,7 +26,7 @@ export class EditarUsuarioComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private service: UsuarioService,
+    private service: UsuariosService,
     private router: Router,
     private modalController: ModalController
   ) {}

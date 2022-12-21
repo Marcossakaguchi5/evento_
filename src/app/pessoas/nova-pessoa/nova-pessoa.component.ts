@@ -1,9 +1,11 @@
+import { EmpresaService } from './../../empresas/empresa.service';
 import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { PessoaService } from './../pessoa.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Pessoa } from '../pessoa';
+import { Empresa } from './empresa';
 
 @Component({
   selector: 'app-nova-pessoa',
@@ -13,25 +15,31 @@ import { Pessoa } from '../pessoa';
 export class NovaPessoaComponent implements OnInit {
 
   novaPessoaForm!:FormGroup;
-
+listaPessoa:Empresa[]=[];
   constructor(
     private formBuilder:FormBuilder,
     private pessoaService:PessoaService,
+    private empresaService:EmpresaService,
     private router:Router,
     private modalController:ModalController
 
   ) { }
 
   ngOnInit(): void {
+    this.empresaService.listar().subscribe((event)=>{
+      this.listaPessoa= event.result as Empresa[];
+      console.log(this.listaPessoa)
+    })
     this.novaPessoaForm=this.formBuilder.group({
       nome:[''],
       cargo :[''],
-      id_empresa:[''],
+      empresa:[''],
       email:[''],
       telefone:[''],
     })
   }
   cadastrar(){
+    console.log(this.novaPessoaForm)
     if(this.novaPessoaForm.valid){
       const novaPessoa=this.novaPessoaForm.getRawValue() as Pessoa;
       this.pessoaService.cadastrarNovaPessoa(novaPessoa).subscribe(

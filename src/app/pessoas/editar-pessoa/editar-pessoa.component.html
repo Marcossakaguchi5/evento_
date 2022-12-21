@@ -14,7 +14,10 @@
         <input formControlName="cargo" class="modal-input" type="text" name="email" >
         <div class="modal-label"><label>Empresa</label>
         </div>
-        <input formControlName="id_empresa" class="modal-input" type="text" name="email" >
+        <select formControlName="empresa" 
+         class="modal-input" type="text"  >
+         <option  *ngFor="let empresa of listaPessoa" >{{empresa.empresa}}</option>
+         </select>
         <div class="modal-label"><label>E-mail</label>
         </div>
         <input formControlName="email" class="modal-input" type="text" name="email" >

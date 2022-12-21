@@ -1,3 +1,4 @@
+import { UsuarioService } from 'src/app/autenticacao/usuario/usuario.service';
 import { PessoaService } from './../pessoa.service';
 import { EditarPessoaComponent } from './../editar-pessoa/editar-pessoa.component';
 import { NovaPessoaComponent } from './../nova-pessoa/nova-pessoa.component';
@@ -17,7 +18,9 @@ export class ListaPessoasComponent implements OnInit {
   constructor(
     private service: PessoaService,
     private modalController:ModalController,
-    private router:Router) {}
+    private router:Router,
+    private ser:UsuarioService) {}
+   
 
   ngOnInit(): void {
     this.service.listar().subscribe((event) => {
@@ -35,7 +38,7 @@ export class ListaPessoasComponent implements OnInit {
   }
 
   async edit(
-    id_convidado:any,
+   
     nome:any,
     cargo:any,
     empresa:any,
@@ -46,7 +49,7 @@ export class ListaPessoasComponent implements OnInit {
       const modal=await this.modalController.create({
         component:EditarPessoaComponent,
         componentProps:{
-          id_convidado,
+       
           nome,
           cargo,
           empresa,
@@ -57,13 +60,17 @@ export class ListaPessoasComponent implements OnInit {
       });
       await modal.present();
     }
-  delet(id_convidado:any){
-    this.service.delet(id_convidado).subscribe(
+  delet(nome:any){
+    this.service.delet(nome).subscribe(
       ()=>{
         this.router.navigate(["/convidados"]);
       },
       (error) =>console.log(error)
     );
 
+  }
+  logout(){
+    this.ser.logout()
+    
   }
 }
